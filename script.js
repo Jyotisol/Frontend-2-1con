@@ -31,21 +31,7 @@ function addData() {
 
 }
 
-// // 3. Remove Admins
-// function removeAdmin() {
-//   //Create a new Array to store non-admin object
-//   const newData = [];
-//   //Now loop through the existing data array
-//   for(let i =0;i<data.length;i++){
-//     //Check if the current person's proffesiion is not admin
-//     if(data[i].proffession !=="admin"){
-//       newData.push(data[i]);
-//     }
-//   }
-//   //now update the data array with new array containing non admins
-//   data = newData;
-//   console.log("Admin removed",Data);
-// }
+
 // 3. Remove Admins
 function removeAdmin() {
   // Create a new array with non-admin objects using filter
@@ -66,9 +52,9 @@ function concatenateArray() {
 
 // 5. Average Age
 function averageAge() {
-  let totalAge =0;
-  for(let i =0;i<data.length;i++){
-    totalAge+=data[i].age;
+  let totalAge = 0;
+  for(let i = 0; i < data.length; i++){
+    totalAge += data[i].age;
 
   }
   const averageAge = totalAge/data.length;
@@ -78,7 +64,7 @@ averageAge();
 
 // 6. Age Check
 function checkAgeAbove25() {
-  const isAbove25 = data.some(person =>person.age>25);
+  const isAbove25 = data.some(person => person.age > 25);
   if(isAbove25){
     console.log("At least one person is above age of 25.");
   }
@@ -90,27 +76,27 @@ function checkAgeAbove25() {
 // 7. Unique Professions
 function uniqueProfessions() {
   //create an empty object to store unique profession
-  const uniqueProfessions ={}
-  for(let i =0;i<data.length;i++){
+  const uniqueProfessions = {}
+  for(let i = 0; i < data.length; i++){
 const profession = data[i].profession;
 uniqueProfessions[profession] = true;
   }
-  const uniqueProfessionsArray=Object.keys(uniqueProfessions);
+  const uniqueProfessionsArray = Object.keys(uniqueProfessions);
   console.log("Unique Profession",uniqueProfessionsArray);
 }
 
 // 8. Sort by Age
 function sortByAge() {
-  data.sort((a,b) =>a.age - b.age);
+  data.sort((a,b) => a.age - b.age);
   console.log("Sorted by Age Ascending",data);
 }
 
 // 9. Update Profession
 function updateJohnsProfession() {
   //Loop through the data array to find John professin and update his profession
-  for(let i =0;i<data.length;i++){
+  for(let i = 0; i < data.length; i++){
     if(data[i].name ==="John"){
-      data[i].profession ="manager";
+      data[i].profession = "manager";
       break;
     }
   }
@@ -120,7 +106,7 @@ function updateJohnsProfession() {
 // 10. Profession Count
 function getTotalProfessions() {
   //getTotalProfessions
-  let developerCount =0;
+  let developerCount = 0;
   let adminCount =0;
   for(let i =0;i<data.length;i++){
     const profession = data[i].profession;
